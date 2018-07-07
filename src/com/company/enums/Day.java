@@ -1,4 +1,4 @@
-package com.company;
+package com.company.enums;
 
 /**
  * Created by lakshmik on 4/7/18.

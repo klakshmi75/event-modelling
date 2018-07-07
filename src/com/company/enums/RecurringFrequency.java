@@ -1,7 +1,8 @@
-package com.company;
+package com.company.enums;
 
 import java.text.ParseException;
 import java.util.Date;
+
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 import play.libs.Time;
@@ -31,30 +32,27 @@ public enum RecurringFrequency {
 
     public static boolean validate(RecurringFrequency recurringFrequency, Date eventStartDate, Date date) {
         boolean result = false;
-        // Basic check, see if the week day of eventStartDate and the given date are same
-        if (Day.getDayFromDate(eventStartDate).getDayIndex() == new LocalDate(date).getDayOfWeek()) {
-            switch (recurringFrequency) {
-                case OCCURS_ONCE:
-                    result = validateOccursOnce(eventStartDate, date);
-                    break;
-                case LAST_WEEK_OF_MONTH:
-                case FIRST_WEEK_OF_MONTH:
-                case SECOND_WEEK_OF_MONTH:
-                case THIRD_WEEK_OF_MONTH:
-                case FOURTH_WEEK_OF_MONTH:
-                case EVERY_WEEK:
-                    result = validateSpecificWeekOfMonth(recurringFrequency, eventStartDate, date);
-                    break;
-                case OTHER_WEEK:
-                    result = validateOtherWeek(recurringFrequency, eventStartDate, date);
-                    break;
-                default:
-                    break;
 
-            }
-        } else {
-            System.out.println("Weekday of the event start date and the given date are not same");
+        switch (recurringFrequency) {
+            case OCCURS_ONCE:
+                result = validateOccursOnce(eventStartDate, date);
+                break;
+            case LAST_WEEK_OF_MONTH:
+            case FIRST_WEEK_OF_MONTH:
+            case SECOND_WEEK_OF_MONTH:
+            case THIRD_WEEK_OF_MONTH:
+            case FOURTH_WEEK_OF_MONTH:
+            case EVERY_WEEK:
+                result = validateSpecificWeekOfMonth(recurringFrequency, eventStartDate, date);
+                break;
+            case OTHER_WEEK:
+                result = validateOtherWeek(recurringFrequency, eventStartDate, date);
+                break;
+            default:
+                break;
+
         }
+
         return result;
     }
 
