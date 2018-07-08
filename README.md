@@ -1,2 +1,3 @@
 # event-modelling
-Event modelling 
+Demo code for event modelling
+
