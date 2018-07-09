@@ -2,7 +2,7 @@
 This is a standalone java application which demonstarates how to find a recurring event with highest priority out of multiple such events on a given date. This mainly solves the problem of modelling reurring events planned on week day basis, i.e; every Monady, every other Monday, first Monday of every month, etc. It does not provide solution for date based events like 1st of every month, 2nd of every month, etc. We can extend the code easily to solve this problem too.
 
 # Dependencies
-Java 8 or higher.
+jdk 8 or higher.
 
 # Steps to run the application
 1. Clone repository 
