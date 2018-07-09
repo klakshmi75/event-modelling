@@ -1,3 +1,5 @@
 .DS_Store
 out/
 *.class
+.idea
+event-modelling.iml
