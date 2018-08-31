@@ -62,6 +62,4 @@ public class EventModellingDemo {
 
         return eventDTOs;
     }
-
-
 }
